@@ -40,8 +40,10 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
+  array = 0
   data[season].each do |person|
-    if person["age"].to_i
+    if person["age"].to_i >= 0 
+      array << person["age"].to_i
       binding.pry
     end
   end
