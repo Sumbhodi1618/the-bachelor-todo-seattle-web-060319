@@ -45,7 +45,6 @@ def get_average_age_for_season(data, season)
     if info["age"] == season
       binding.pry
         counter += 1
-      end 
     end
   end
   counter
