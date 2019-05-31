@@ -43,7 +43,7 @@ def get_average_age_for_season(data, season)
   array = 0
   data[season].each do |person|
     if person["age"].to_i >= 0 
-      array << person["age"].to_i
+      person["age"].to
       binding.pry
     end
   end
