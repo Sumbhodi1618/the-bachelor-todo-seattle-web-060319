@@ -39,15 +39,16 @@ def get_occupation(data, hometown)
   end
 end
 
+
 def get_average_age_for_season(data, season)
-  array = 0
-  data[season].each do |person|
-    if person["age"].to_i >= 0 
-      array << person["age"].to_i
-      
-      arr.inject(0.0) { |sum, el| sum + el } / arr.size
-      binding.pry
+  age = 0
+  count = 0
+  data[season].each do |hash|
+    hash.each do |k,v|
+      if k == "age"
+        count += 1
+        age += v.to_f
+      end
     end
   end
-  return array
 end
