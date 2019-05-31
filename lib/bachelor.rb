@@ -12,7 +12,6 @@ def get_contestant_name(data, occupation)
     person.each do |info|
       if info["occupation"] == occupation
           return info["name"]
-             #binding.pry
       end
     end
   end
@@ -31,7 +30,13 @@ def count_contestants_by_hometown(data, hometown)
 end
 
 def get_occupation(data, hometown)
-  # code here
+  data.each do |season, person|
+    person.each do |job|
+      if job["hometown"] == hometown
+        return job["occupation"]
+      end
+    end 
+  end
 end
 
 def get_average_age_for_season(data, season)
